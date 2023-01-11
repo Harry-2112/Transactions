@@ -1,0 +1,12 @@
+.container {
+  height: 100vh;
+}
+
+h2 {
+  font-size: 30px;
+  color: rgb(62, 63, 63);
+}
+
+ul {
+  list-style: none;
+}

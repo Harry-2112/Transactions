@@ -1,0 +1,41 @@
+<div class="container px-5">
+  <h2 class="py-4">{{titulo | titlecase}}</h2>
+  <nav class="navbar navbar-expand-sm navbar-light">
+    <div class="container-fluid">
+      <div class="navbar-nav">
+        <a class="nav-link active mx-3" href="#" *ngFor="let item of links"><span><i
+              class="{{item.icon}} text-danger me-2"></i></span>{{item.nombre | titlecase}}</a>
+      </div>
+    </div>
+  </nav>
+  <hr>
+  <div class="container">
+    <div class="text-center">
+      <div class="meses">
+        <button class="circle"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></button>
+        <button class="mes">March 2022</button>
+        <button class="circle"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+      </div>
+      <div class="total">
+        <h2 class="text-danger">{{total | currency:'USD'}}</h2>
+        <span>{{span | titlecase}}</span>
+      </div>
+      <div class="container-cards">
+        <div class="card border-{{item.color}} mx-3 my-3" *ngFor="let item of cards">
+          <div class="icono text-{{item.color}}">
+            <i class="{{item.icon}}"></i>
+          </div>
+          <div class="content">
+            <span>{{item.nombre | titlecase}}</span>
+            <h2>{{item.precio | currency:'USD'}}</h2>
+          </div>
+        </div>
+        <a href="#" class="addItem">
+          <div class="card mx-3 my-3 border-secondary add">
+            <i class="fa fa-plus text-secondary" aria-hidden="true"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

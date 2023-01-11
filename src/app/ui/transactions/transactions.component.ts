@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./transactions.component.css']
 })
 export class TransactionsComponent {
+  filtro:boolean=false;
   titulo="Transactions"
   fechas=[
     {
@@ -57,6 +58,39 @@ export class TransactionsComponent {
       }
     ]
 
+    },
+    {
+      fecha:"January 2022",
+      dinero:-320,
+      transacciones:[
+      {
+        icon:"",
+        type:"education",
+        descripcion:"Description",
+        precio:-250
+      },
+      {
+        icon:"",
+        type:"Groceries",
+        descripcion:"Description",
+        precio:-20
+      },
+      {
+        icon:"",
+        type:"Gift",
+        descripcion:"Description",
+        precio:-50
+      }
+    ]
+
     }
   ]
+
+  OnFiltro(){
+    if(this.filtro==false){
+      this.filtro=true
+    }else{
+      this.filtro=false
+    }
+  }
 }

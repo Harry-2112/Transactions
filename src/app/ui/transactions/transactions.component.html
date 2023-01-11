@@ -1,34 +1,37 @@
 <div class="container">
-  <div class="title">
+  <div class="title pt-5 pb-3">
     <h2>{{titulo}}</h2>
-    <a href=""><i class="fa fa-filter"></i></a>
+    <button id="filtro" (click)="OnFiltro()"><i class="fa fa-filter"></i></button>
   </div>
-  <div class="card" *ngFor="let item of fechas">
-    <div class="card-header">
-      <div class="fecha">
-        <h3>07</h3>
-      </div>
-      <div class="content">
-        <p>Monday</p>
-        <h6>{{item.fecha}}</h6>
-      </div>
-      <div class="dinero">
-        <h5>{{item.dinero | currency:'USD'}}</h5>
-      </div>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item" *ngFor="let element of item.transacciones">
-        <div class="icon">
-          <i class="{{element.icon}}"></i>
+  <app-filtro *ngIf="filtro"></app-filtro>
+  <cdk-virtual-scroll-viewport class="block-list-num" itemSize="10">
+    <div class="card block-num" *cdkVirtualFor="let item of fechas">
+      <div class="card-header">
+        <div class="fecha">
+          <h3>07</h3>
         </div>
         <div class="content">
-          <h6>{{element.type}}</h6>
-          <span>{{element.descripcion}}</span>
+          <p>Monday</p>
+          <h6>{{item.fecha}}</h6>
         </div>
-        <div class="precio">
-          <h5>{{element.precio | currency:'USD'}}</h5>
+        <div class="dinero">
+          <h5>{{item.dinero | currency:'USD'}}</h5>
         </div>
-      </li>
-    </ul>
-  </div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let element of item.transacciones">
+          <div class="icon">
+            <i class="{{element.icon}}"></i>
+          </div>
+          <div class="content">
+            <h6>{{element.type}}</h6>
+            <span>{{element.descripcion}}</span>
+          </div>
+          <div class="precio">
+            <h5>{{element.precio | currency:'USD'}}</h5>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </cdk-virtual-scroll-viewport>
 </div>

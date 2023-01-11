@@ -1,0 +1,36 @@
+<div class="content">
+  <div class="my_modal">
+    <div id="content_title">
+      <h2>{{titulo | titlecase}}</h2>
+      <button id="close"><i class="fa fa-close"></i></button>
+    </div>
+    <div id="content_name">
+      <div class="pb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name">
+      </div>
+    </div>
+    <div id="content_select_color">
+      <h5>Color</h5>
+      <div class="content-color">
+        <div *ngFor="let item of colores" class="px-2 py-2">
+          <button class="color" [ngStyle]="{'background-color':item.color}">
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="content_select_icon">
+      <h5>icon</h5>
+      <div class="content-color">
+        <div *ngFor="let item of iconos" class="px-2 py-2">
+          <button class="color">
+            <i class="{{item.icon}}"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="content_btn">
+      <button type="button" class="btn btn-primary w-100 mt-3">Create</button>
+    </div>
+  </div>
+</div>

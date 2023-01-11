@@ -3,11 +3,25 @@
   margin: 0;
 }
 
-.container {
+.content {
   width: 100%;
   height: 100vh;
 }
 
 .row {
   width: 100%;
+}
+
+app-transactions {
+  max-height: 100%;
+}
+
+app-modal {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  background: rgba(00, 00, 00, .7);
 }

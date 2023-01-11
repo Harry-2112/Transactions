@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-categories',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent {
+
   titulo="categoria"
   links=[
     {icon:"fa fa-plus-circle",nombre:"Expensess"},

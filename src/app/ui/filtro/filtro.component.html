@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="my-3">
+    <h5>Category</h5>
+    <div class="form-check form-check-inline" *ngFor="let item of categoria">
+      <input class="form-check-input" type="checkbox" id="{{item.id}}" value="{{item.value}}">
+      <label class="form-check-label" for="{{item.id}}">{{item.nombre}}</label>
+    </div>
+  </div>
+
+  <div class="my-3">
+    <h5>Amount</h5>
+
+    <div class="row g-2">
+      <div class="col-md">
+        <div class="form-floating">
+          MIN
+          <input type="number" class="form-control leng">
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="form-floating">
+          MAX
+          <input type="number" class="form-control leng">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-3">
+    <h5>Date</h5>
+    <div class="row g-2">
+      <div class="col-md">
+        <div class="form-floating">
+          FROM
+          <input type="date" class="form-control leng">
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="form-floating">
+          TO
+          <input type="date" class="form-control leng">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

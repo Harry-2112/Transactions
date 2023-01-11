@@ -1,9 +1,11 @@
 <div class="container bg-light">
   <h2 class="py-4">{{titulo}}</h2>
   <ul class="py-4">
-    <li *ngFor="let item of itenMenu" class="py-3">
-      <span class="me-3"><i class="text-primary {{item.icon}}"></i></span>
-      {{item.nombre | titlecase}}
-    </li>
+    <a href="">
+      <li *ngFor="let item of itenMenu" class="py-3">
+        <span class="me-3"><i class="text-primary {{item.icon}}"></i></span>
+        {{item.nombre | titlecase}}
+      </li>
+    </a>
   </ul>
 </div>

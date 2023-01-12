@@ -24,4 +24,52 @@
 
 .block-list-num {
   height: 550px;
+  scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
+}
+
+.block-list-num::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.block-list-num::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.block-list-num::-webkit-scrollbar-button:increment,.block-list-num::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.block-list-num::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.block-list-num::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.block-list-num::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+.height-transactions{
+  height: 850px;
+}
+
+.revenue{
+  color: rgb(123, 198, 176);
+}
+
+.loss{
+  color: rgb(242, 126, 129);
+}
+
+.icon-box{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding-right: 10%;
+  padding-top: 4%;
 }

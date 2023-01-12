@@ -14,7 +14,7 @@ export class TransactionsComponent {
       dinero:-530,
       transacciones:[
       {
-        icon:"",
+        icon:"fa fa-bank",
         type:"rent",
         descripcion:"Description",
         precio:-500

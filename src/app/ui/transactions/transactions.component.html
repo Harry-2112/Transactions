@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container h-100">
   <div class="title pt-5 pb-3">
     <h2>{{titulo}}</h2>
     <button id="filtro" (click)="OnFiltro()"><i class="fa fa-filter"></i></button>
   </div>
   <app-filtro *ngIf="filtro"></app-filtro>
-  <cdk-virtual-scroll-viewport class="block-list-num" itemSize="10">
+  <cdk-virtual-scroll-viewport class="block-list-num height-transactions" itemSize="10">
     <div class="card block-num" *cdkVirtualFor="let item of fechas">
       <div class="card-header">
         <div class="fecha">
@@ -15,20 +15,20 @@
           <h6>{{item.fecha}}</h6>
         </div>
         <div class="dinero">
-          <h5>{{item.dinero | currency:'USD'}}</h5>
+          <h5 [ngClass]="{'revenue': item.dinero > 0 , 'loss': item.dinero < 0}">{{item.dinero | currency:'USD'}}</h5>
         </div>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item" *ngFor="let element of item.transacciones">
-          <div class="icon">
-            <i class="{{element.icon}}"></i>
+          <div class="icon-box">
+            <i class="{{element.icon}} fs-2"></i>
           </div>
           <div class="content">
             <h6>{{element.type}}</h6>
             <span>{{element.descripcion}}</span>
           </div>
           <div class="precio">
-            <h5>{{element.precio | currency:'USD'}}</h5>
+            <h5 [ngClass]="{'revenue': element.precio > 0 , 'loss': element.precio < 0}">{{element.precio | currency:'USD'}}</h5>
           </div>
         </li>
       </ul>
